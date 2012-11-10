@@ -1,0 +1,55 @@
+@import "compass/utilities/general/clearfix"
+@import "compass/css3/box-sizing"
+
+$gridColumns: 12 !default
+$gridGutterWidth: 15px !default
+
+$gridColumnWidth: 100% / $gridColumns
+
+*
+  +box-sizing(border-box)
+
+// The Grid
+.row
+  +clearfix  // For convenience
+  // To get an even reveal if we do lines, we have to divide whitespace symmetrically
+  margin-left: -$gridGutterWidth / 2
+  margin-right: -$gridGutterWidth / 2
+
+  .row
+    width: auto
+
+
+@mixin grid-span($columns)
+  width: ($gridColumnWidth * $columns)
+
+@mixin grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
+  @while $gridColumns > 0
+    .span#{$gridColumns}
+      +grid-span($gridColumns)
+    $gridColumns: $gridColumns - 1
+
+.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9,
+.span10, .span11, .span12, .span13, .span14, .span15, .span16
+  float: left
+  min-height: 1px  // prevent collapsing columns
+  padding-left: $gridGutterWidth / 2
+  padding-right: $gridGutterWidth / 2
+
+
++grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
+
+
+$lineColor: #000
+
+.border-bottom
+  border-bottom: 1px solid $lineColor
+
+.border-right
+  border-right: 1px solid $lineColor
+
+.border-left
+  border-left: 1px solid $lineColor
+
+.border-top
+  border-top: 1px solid $lineColor

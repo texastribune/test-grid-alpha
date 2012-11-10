@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>Grid</title>
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/demo.css" rel="stylesheet">
+  </head>
+  <body>
+    <section>
+      <div>Random Div Outside</div>
+    </section>
+
+    <section class="test">
+      <div style="width: 960px; background: mediumturquoise; margin: 1em auto; text-align: center;">
+        <q>960px Div for reference. Notice that the rows below are larger</q>
+      </div>
+    </section>
+
+    <section class="test">
+      <div class="row">
+        <div class="span12">
+          <div style="background: mediumturquoise;">
+            <q>A span12 row, my contents should be the same as the mediumturquoise block above.</q>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test">
+      <div class="row">
+        <q>Row without grid. I am wider than 960px. You should never use a row without a column.</q>
+      </div>
+    </section>
+
+    <section class="test">
+      <div class="row">
+        <div class="span12"><q>span12</q></div>
+      </div>
+      <div class="row">
+        <div class="span4"><q>span4</q></div>
+        <div class="span8"><q>span8</q></div>
+      </div>
+      <div class="row">
+        <div class="span8">
+          <q>span8 container with a nested row</q>
+          <div class="row">
+            <div class="span3">
+              <q>span3</q>
+            </div>
+            <div class="span9">
+              <q>span9</q>
+            </div>
+          </div>
+        </div>
+        <div class="span4">
+          <q>span4</q>
+        </div>
+      </div>
+    </section>
+
+    <section class="test">
+      Line Test
+      <div class="row border-bottom">
+        <div class="span8">
+          <div class="row border-bottom">
+            <div class="span12">
+              <q>Main Heading</q>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4 border-right _tall">
+              <q>Hi I Am a skyscraper rail</q>
+            </div>
+            <div class="span8 _demo">
+              <q>Hi I Am Main Content</q>
+            </div>
+          </div>
+        </div>
+        <div class="span4 border-left _tall _demo">
+          <q>I am a rail. The line to the left won't reach all the way to
+            the bottom without some javascript help.</q>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6 border-right">
+          <q>Hey, More Content</q>
+        </div>
+        <div class="span6">
+          <q>Hey, More Content</q>
+        </div>
+      </div>
+    </section>
+
+    <section class="tes">
+      Line Test
+      <div class="row border-bottom">
+        <div class="span8">
+          <div class="row border-bottom">
+            <div class="span12">
+              <q>Main Heading</q>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4 border-right _tall">
+              <q>Hi I Am a skyscraper rail</q>
+            </div>
+            <div class="span8 _demo">
+              <q>Hi I Am Main Content</q>
+            </div>
+          </div>
+        </div>
+        <div class="span4 border-left _tall _demo">
+          <q>I am a rail. The line to the left won't reach all the way to
+            the bottom without some javascript help.</q>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6 border-right">
+          <q>Hey, More Content</q>
+        </div>
+        <div class="span6">
+          <q>Hey, More Content</q>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
