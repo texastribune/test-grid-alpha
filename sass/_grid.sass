@@ -73,9 +73,10 @@ $gridColumnWidth: 100% / $gridColumns
 
 // Collect the common spanN css in a combination selector.
 //   This could be in `grid-core-span`, but this is more efficient.
-.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9,
-.span10, .span11, .span12, .span13, .span14, .span15, .span16
-  +grid-span
+.row >
+  .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9,
+  .span10, .span11, .span12, .span13, .span14, .span15, .span16
+    +grid-span
 
 // Generate base grid
 +grid-core($gridColumnWidth, $gridGutterWidth)
