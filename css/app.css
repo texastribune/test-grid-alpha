@@ -1,6 +1,6 @@
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-.row { overflow: hidden; *zoom: 1; margin-left: auto; margin-right: auto; width: 975px; }
+.row { overflow: hidden; margin-left: auto; margin-right: auto; width: 975px; }
 .row .row { margin-left: -7.5px; margin-right: -7.5px; width: auto; }
 
 .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12, .span13, .span14, .span15, .span16 { float: left; min-height: 1px; padding-left: 7.5px; padding-right: 7.5px; }
