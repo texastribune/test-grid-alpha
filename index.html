@@ -7,8 +7,39 @@
     <link href="css/demo.css" rel="stylesheet">
   </head>
   <body>
-    <section>
-      <div>Random Div Outside</div>
+    <section id="readme">
+
+# The Grid
+
+## About
+
+This grid is a hybrid of Bootstrap, Foundation, and probably some other things.
+I really like how terse the bootstrap syntax is. But I really hated how it
+relied on inefficient css selectors.
+
+In order to accomodate grid layouts with borders, the gutter is evenly divided.
+
+The columns are always fluid, using percents instead of derived pixel widths.
+This means nesting is automatic, and the layout is more tolerant to browser
+zoom.
+
+## How to use this demo
+
+This code should be considered alpha. Things are broken, missing, undocmented.
+You're expected to go directly to the source to figure out what's going on. Your
+web inspector is your friend. There is no reset.css or normalize.css here.
+
+One handy thing that is built in is when you hover over content, the background
+will highlight. If you scan your mouse over many blocks, you can get the
+highlight to persist. Use this to figure out the exact area that's available to
+you inside the grid. For most of the blocks below, gray areas have been filled
+in to help you visualize how the grid is filled.
+
+## TODO
+
+Responsive logic. Especially how to simultaneously do responsive logic with
+semantic and explicit grids.
+
     </section>
 
     <section class="test">
@@ -170,6 +201,11 @@
         </div>
       </div>
     </section>
-
+    <script src="js/showdown.js"></script>
+    <script>
+      var converter = new Showdown.converter(),
+          el = document.getElementById('readme');
+      el.innerHTML = converter.makeHtml(el.innerHTML);
+    </script>
   </body>
 </html>
