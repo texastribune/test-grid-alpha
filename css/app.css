@@ -57,10 +57,10 @@
 
 .rail { float: left; min-height: 1px; padding-left: 7.5px; padding-right: 7.5px; width: 33.33333%; }
 
-.border-bottom { border-bottom: 1px solid #aaaaaa; }
+.border-bottom { border-bottom: 1px solid #9999aa; }
 
-.border-right { border-right: 1px solid #aaaaaa; }
+.border-right { border-right: 1px solid #9999aa; }
 
-.border-left { border-left: 1px solid #aaaaaa; }
+.border-left { border-left: 1px solid #9999aa; }
 
-.border-top { border-top: 1px solid #aaaaaa; }
+.border-top { border-top: 1px solid #9999aa; }
