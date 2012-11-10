@@ -29,6 +29,30 @@
 
 .span1 { width: 8.33333%; }
 
+.offset12 { margin-left: 100%; }
+
+.offset11 { margin-left: 91.66667%; }
+
+.offset10 { margin-left: 83.33333%; }
+
+.offset9 { margin-left: 75%; }
+
+.offset8 { margin-left: 66.66667%; }
+
+.offset7 { margin-left: 58.33333%; }
+
+.offset6 { margin-left: 50%; }
+
+.offset5 { margin-left: 41.66667%; }
+
+.offset4 { margin-left: 33.33333%; }
+
+.offset3 { margin-left: 25%; }
+
+.offset2 { margin-left: 16.66667%; }
+
+.offset1 { margin-left: 8.33333%; }
+
 .border-bottom { border-bottom: 1px solid black; }
 
 .border-right { border-right: 1px solid black; }

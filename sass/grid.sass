@@ -20,15 +20,35 @@ $gridColumnWidth: 100% / $gridColumns
     width: auto
 
 
-@mixin grid-span($columns)
-  width: ($gridColumnWidth * $columns)
+// Grid Generation Helpers
+// <https://github.com/jlong/sass-twitter-bootstrap/blob/master/lib/_mixins.scss>
+//
+
+@mixin grid-core($gridColumnWidth, $gridGutterWidth)
+  +grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
+  +grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
+
 
 @mixin grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
   @while $gridColumns > 0
     .span#{$gridColumns}
-      +grid-span($gridColumns)
+      +grid-core-span($gridColumns)
     $gridColumns: $gridColumns - 1
 
+@mixin grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
+  @while $gridColumns > 0
+    .offset#{$gridColumns}
+      +grid-core-offset($gridColumns)
+    $gridColumns: $gridColumns - 1
+
+@mixin grid-core-span($columns)
+  width: ($gridColumnWidth * $columns)
+
+@mixin grid-core-offset($columns)
+  margin-left: ($gridColumnWidth * $columns)
+
+
+// This could be in `grid-span`, but this is more efficient.
 .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9,
 .span10, .span11, .span12, .span13, .span14, .span15, .span16
   float: left
@@ -37,7 +57,8 @@ $gridColumnWidth: 100% / $gridColumns
   padding-right: $gridGutterWidth / 2
 
 
-+grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
+// Generate base grid
++grid-core($gridColumnWidth, $gridGutterWidth)
 
 
 $lineColor: #000
