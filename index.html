@@ -56,11 +56,13 @@ semantic and explicit grids.
 
             <p>A span12 row, my contents should be the same as the
 mediumturquoise block above. There's a little bit of gray to each side. That is
-not ideal, but makes the CSS a lot simpler. I would really like to get rid of it
-though. I just haven't tried doing it yet because I know it will be painful. Our
-minimum supported browser version, IE8, does not support :last-child so it may
-be impossible. There is a polyfill for IE8 though: <a
-href="http://selectivizr.com/">selectivizr.com</a>.</p>
+not ideal, but makes the CSS a lot simpler. I would really like to get rid of
+it. Our minimum supported browser version, IE8, does not support :last-child so
+it may be impossible. There is a polyfill for IE8 though: <a
+href="http://selectivizr.com/">selectivizr.com</a>. Some grid frameworks don't
+have this problem because their gutters aren't symmetrical, which makes removing
+their gutter easier. Other grid frameworks just ignore this. If we want to have
+the ability to draw lines, we need symmetic gutters.</p>
 
           </div>
         </div>
@@ -74,7 +76,11 @@ href="http://selectivizr.com/">selectivizr.com</a>.</p>
             <div class="row"><div class="span12">
               <div class="row"><div class="span12">
                 <div style="background: mediumturquoise;">
-                  <p>A deeply-nested span12 row, my contents should also be the same as the mediumturquoise block above.</p>
+
+                  <p>A deeply-nested span12 row, my contents should also be the
+same as the mediumturquoise blocks above. This is a test to make sure the gutter
+spacing is correctly handled with every level of nesting.</p>
+
                 </div>
               </div></div>
             </div></div>
