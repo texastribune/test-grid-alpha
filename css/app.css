@@ -189,10 +189,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .offset1 { margin-left: 8.33333%; }
 
-.main { float: left; min-height: 1px; padding-left: 7.5px; padding-right: 7.5px; width: 66.66667%; }
-
-.rail { float: left; min-height: 1px; padding-left: 7.5px; padding-right: 7.5px; width: 33.33333%; }
-
 .border-bottom { border-bottom: 1px solid #9999aa; }
 
 .border-right { border-right: 1px solid #9999aa; }
@@ -200,6 +196,16 @@ table { border-collapse: collapse; border-spacing: 0; }
 .border-left { border-left: 1px solid #9999aa; }
 
 .border-top { border-top: 1px solid #9999aa; }
+
+.content { overflow: hidden; margin-left: auto; margin-right: auto; width: 975px; }
+
+.main { float: left; min-height: 1px; padding-left: 7.5px; padding-right: 7.5px; width: 66.66667%; }
+
+.rail { float: left; min-height: 1px; padding-left: 7.5px; padding-right: 7.5px; width: 33.33333%; }
+
+.grid { overflow: hidden; margin-left: -7.5px; margin-right: -7.5px; width: auto; }
+
+.grid-item { float: left; min-height: 1px; padding-left: 7.5px; padding-right: 7.5px; width: 16.66667%; }
 
 section { margin: 1em auto; }
 
@@ -209,5 +215,6 @@ section { margin: 1em auto; }
 q { -webkit-transition: background-color 0.2s ease; -webkit-transition-delay: 0.3s; -moz-transition: background-color 0.2s ease 0.3s; -o-transition: background-color 0.2s ease 0.3s; transition: background-color 0.2s ease 0.3s; display: block; padding: 0.5em; }
 q:before, q:after { content: ""; }
 q:hover { -webkit-transition-delay: 0.01s; -moz-transition-delay: 0.01s; -o-transition-delay: 0.01s; transition-delay: 0.01s; background-color: #eeffee; }
+.grid-item q { border: 1px solid #cccccc; text-align: center; }
 
 ._tall { min-height: 400px !important; }

@@ -43,7 +43,7 @@ $gridColumnWidth: 100% / $gridColumns
     $gridColumns: $gridColumns - 1
 
 // The css that every column span should get except width.
-@mixin grid-span()
+@mixin grid-span-base()
   float: left
   min-height: 1px  // prevent collapsing columns
   // have to use padding because margin is outside the box-size calculation
@@ -54,18 +54,45 @@ $gridColumnWidth: 100% / $gridColumns
 @mixin grid-core-span($columns)
   width: ($gridColumnWidth * $columns)
 
+// Shortcut mixin for getting column span style and width at once.
+// Copies Bourbon Neat syntax.
+@mixin span-columns($columns)
+  +grid-span-base
+  +grid-core-span($columns)
+
+// Outer wrapper, center container
+// Copies Bourbon Neat syntax.
+@mixin outer-container
+  +clearfix
+  margin-left: auto
+  margin-right: auto
+  width: 960px + $gridGutterWidth  // TODO this is where the responsive magic should happen
+
+// row container
+// Copies Bourbon Neat syntax.
+@mixin row
+  +clearfix
+  // To get an even reveal if we do lines, we have to divide whitespace symmetrically
+  margin-left: -$gridGutterWidth / 2
+  margin-right: -$gridGutterWidth / 2
+  width: auto
+
 // The css that every column offsetN should get.
 @mixin grid-core-offset($columns)
   margin-left: ($gridColumnWidth * $columns)
 
-// All grid columns need to be children of a `.row` block element
+// All grid columns need to be children of a `.row` block element.
+// I could re-use outer-container here, but since outer and inner rows
+// both need the clearfix mixin, take advantage of the repeated class name.
 .row
-  +clearfix  // For convenience
+  // +outer-container
+  +clearfix
   margin-left: auto
   margin-right: auto
   width: 960px + $gridGutterWidth  // TODO this is where the responsive magic should happen
 
   .row
+    // +row
     // To get an even reveal if we do lines, we have to divide whitespace symmetrically
     margin-left: -$gridGutterWidth / 2
     margin-right: -$gridGutterWidth / 2
@@ -76,20 +103,11 @@ $gridColumnWidth: 100% / $gridColumns
 .row >
   .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9,
   .span10, .span11, .span12, .span13, .span14, .span15, .span16
-    +grid-span
+    +grid-span-base
 
 // Generate base grid
 +grid-core($gridColumnWidth, $gridGutterWidth)
 
-
-// ## Semantic Grid
-.main
-  +grid-span
-  +grid-core-span(8)
-
-.rail
-  +grid-span
-  +grid-core-span(4)
 
 
 // ## Lines
