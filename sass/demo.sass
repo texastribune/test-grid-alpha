@@ -1,3 +1,6 @@
+@import "compass/css3/transition"
+
+// CSS specifically for the demo
 
 section
   margin: 1em auto
@@ -12,11 +15,13 @@ section
     text-align: center
 
 q
+  +single-transition(background-color, 0.2s, ease, 0.3s)
   display: block
   padding: 0.5em
   &:before
     content: ""
   &:hover
+    +transition-delay(0.01s)
     background-color: #efe
 
 ._tall

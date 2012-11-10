@@ -1,7 +1,6 @@
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 .row { overflow: hidden; *zoom: 1; margin-left: -7.5px; margin-right: -7.5px; }
-.row .row { width: auto; }
 
 .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12, .span13, .span14, .span15, .span16 { float: left; min-height: 1px; padding-left: 7.5px; padding-right: 7.5px; }
 
@@ -57,10 +56,10 @@
 
 .rail { float: left; min-height: 1px; padding-left: 7.5px; padding-right: 7.5px; width: 33.33333%; }
 
-.border-bottom { border-bottom: 1px solid black; }
+.border-bottom { border-bottom: 1px solid #aaaaaa; }
 
-.border-right { border-right: 1px solid black; }
+.border-right { border-right: 1px solid #aaaaaa; }
 
-.border-left { border-left: 1px solid black; }
+.border-left { border-left: 1px solid #aaaaaa; }
 
-.border-top { border-top: 1px solid black; }
+.border-top { border-top: 1px solid #aaaaaa; }

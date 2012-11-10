@@ -3,8 +3,8 @@ section { margin: 1em auto; width: 960px; }
 .test .row { background: #eeeeee; }
 .test .row > * { background: #dddddd; text-align: center; }
 
-q { display: block; padding: 0.5em; }
+q { -webkit-transition: background-color 0.2s ease; -webkit-transition-delay: 0.3s; -moz-transition: background-color 0.2s ease 0.3s; -o-transition: background-color 0.2s ease 0.3s; transition: background-color 0.2s ease 0.3s; display: block; padding: 0.5em; }
 q:before { content: ""; }
-q:hover { background-color: #eeffee; }
+q:hover { -webkit-transition-delay: 0.01s; -moz-transition-delay: 0.01s; -o-transition-delay: 0.01s; transition-delay: 0.01s; background-color: #eeffee; }
 
 ._tall { min-height: 400px; }

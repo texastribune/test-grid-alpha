@@ -1,88 +1,101 @@
 @import "compass/utilities/general/clearfix"
 @import "compass/css3/box-sizing"
 
+// TODO:
+// I still don't know how to wrap everything.
+
+// User defined grid variables
 $gridColumns: 12 !default
 $gridGutterWidth: 15px !default
+$gridLineColor: #AAA !default
 
+// Derived variables
 $gridColumnWidth: 100% / $gridColumns
 
+// Box sizing hack
+// <http://paulirish.com/2012/box-sizing-border-box-ftw/>
 *
   +box-sizing(border-box)
 
-// The Grid
-.row
-  +clearfix  // For convenience
-  // To get an even reveal if we do lines, we have to divide whitespace symmetrically
-  margin-left: -$gridGutterWidth / 2
-  margin-right: -$gridGutterWidth / 2
-
-  .row
-    width: auto
-
-
-// Grid Generation Helpers
-// <https://github.com/jlong/sass-twitter-bootstrap/blob/master/lib/_mixins.scss>
+// # The Grid
+// ## Grid Generation Helpers
+// Derived from: <https://github.com/jlong/sass-twitter-bootstrap/blob/master/lib/_mixins.scss>
 //
 
+// main() mixin to generate the basic grid
 @mixin grid-core($gridColumnWidth, $gridGutterWidth)
   +grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
   +grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
 
 
+// generates .spanN
 @mixin grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
   @while $gridColumns > 0
     .span#{$gridColumns}
       +grid-core-span($gridColumns)
     $gridColumns: $gridColumns - 1
 
+// generates .offsetN
 @mixin grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
   @while $gridColumns > 0
     .offset#{$gridColumns}
       +grid-core-offset($gridColumns)
     $gridColumns: $gridColumns - 1
 
-@mixin grid-core-span($columns)
-  width: ($gridColumnWidth * $columns)
-
-@mixin grid-core-offset($columns)
-  margin-left: ($gridColumnWidth * $columns)
-
+// the css that every span column should get
 @mixin grid-col()
   float: left
   min-height: 1px  // prevent collapsing columns
+  // have to use padding because margin is outside the box-size calculation
   padding-left: $gridGutterWidth / 2
   padding-right: $gridGutterWidth / 2
+
+// the css that every spanN column should get
+@mixin grid-core-span($columns)
+  width: ($gridColumnWidth * $columns)
+
+// the css that every offsetN should get
+@mixin grid-core-offset($columns)
+  margin-left: ($gridColumnWidth * $columns)
+
+// All grid columns need to be children of a `row` classed element, preferrably a div
+.row
+  +clearfix  // For convenience
+  // To get an even reveal if we do lines, we have to divide whitespace symmetrically
+  margin-left: -$gridGutterWidth / 2
+  margin-right: -$gridGutterWidth / 2
 
 // This could be in `grid-span`, but this is more efficient.
 .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9,
 .span10, .span11, .span12, .span13, .span14, .span15, .span16
   +grid-col
 
-
 // Generate base grid
 +grid-core($gridColumnWidth, $gridGutterWidth)
 
-// Semantic Grid
+
+// ## Semantic Grid
 .main
   +grid-col
   +grid-core-span(8)
-
 
 .rail
   +grid-col
   +grid-core-span(4)
 
 
-$lineColor: #000
-
+// ## Lines
+// If you need separators between grid elements.
+// `box-sizing: { border-box; }` takes care of the change of width.
+// These can be applied to the rows or the spans.
 .border-bottom
-  border-bottom: 1px solid $lineColor
+  border-bottom: 1px solid $gridLineColor
 
 .border-right
-  border-right: 1px solid $lineColor
+  border-right: 1px solid $gridLineColor
 
 .border-left
-  border-left: 1px solid $lineColor
+  border-left: 1px solid $gridLineColor
 
 .border-top
-  border-top: 1px solid $lineColor
+  border-top: 1px solid $gridLineColor
