@@ -17,11 +17,11 @@ q
   +single-transition(background-color, 0.2s, ease, 0.3s)
   display: block
   padding: 0.5em
-  &:before
+  &:before, &:after
     content: ""
   &:hover
     +transition-delay(0.01s)
     background-color: #efe
 
 ._tall
-  min-height: 400px
+  min-height: 400px !important
