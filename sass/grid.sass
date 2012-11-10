@@ -1,9 +1,6 @@
 @import "compass/utilities/general/clearfix"
 @import "compass/css3/box-sizing"
 
-// TODO:
-// I still don't know how to wrap everything.
-
 // User defined grid variables
 $gridColumns: 12 !default
 $gridGutterWidth: 15px !default
@@ -61,9 +58,15 @@ $gridColumnWidth: 100% / $gridColumns
 // All grid columns need to be children of a `row` classed element, preferrably a div
 .row
   +clearfix  // For convenience
-  // To get an even reveal if we do lines, we have to divide whitespace symmetrically
-  margin-left: -$gridGutterWidth / 2
-  margin-right: -$gridGutterWidth / 2
+  margin-left: auto
+  margin-right: auto
+  width: 960px + $gridGutterWidth  // TODO this is where the responsive magic should happen
+
+  .row
+    // To get an even reveal if we do lines, we have to divide whitespace symmetrically
+    margin-left: -$gridGutterWidth / 2
+    margin-right: -$gridGutterWidth / 2
+    width: auto
 
 // This could be in `grid-span`, but this is more efficient.
 .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9,

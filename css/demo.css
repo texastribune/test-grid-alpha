@@ -1,4 +1,4 @@
-section { margin: 1em auto; width: 960px; }
+section { margin: 1em auto; }
 
 .test .row { background: #eeeeee; }
 .test .row > * { background: #dddddd; text-align: center; }
