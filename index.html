@@ -53,7 +53,15 @@ semantic and explicit grids.
       <div class="row">
         <div class="span12">
           <div style="background: mediumturquoise;">
-            <p>A span12 row, my contents should be the same as the mediumturquoise block above.</p>
+
+            <p>A span12 row, my contents should be the same as the
+mediumturquoise block above. There's a little bit of gray to each side. That is
+not ideal, but makes the CSS a lot simpler. I would really like to get rid of it
+though. I just haven't tried doing it yet because I know it will be painful. Our
+minimum supported browser version, IE8, does not support :last-child so it may
+be impossible. There is a polyfill for IE8 though: <a
+href="http://selectivizr.com/">selectivizr.com</a>.</p>
+
           </div>
         </div>
       </div>
