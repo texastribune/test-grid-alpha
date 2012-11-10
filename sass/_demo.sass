@@ -13,12 +13,10 @@ section
     background: #ddd
     text-align: center
 
-q
+p
   +single-transition(background-color, 0.2s, ease, 0.3s)
-  display: block
+  margin: 0
   padding: 0.5em
-  &:before, &:after
-    content: ""
   &:hover
     +transition-delay(0.01s)
     background-color: #efe
