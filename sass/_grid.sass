@@ -12,51 +12,53 @@ $gridLineColor: #AAA !default
 $gridColumnWidth: 100% / $gridColumns
 
 // Box sizing hack
-// <http://paulirish.com/2012/box-sizing-border-box-ftw/>
+//
+// Allows us to write much simpler css for the grid column spans.
+//   <http://paulirish.com/2012/box-sizing-border-box-ftw/>
 *
   +box-sizing(border-box)
 
 // ## Grid Generation Helpers
+//
 // Derived from: <https://github.com/jlong/sass-twitter-bootstrap/blob/master/lib/_mixins.scss>
 //
 
-// main() mixin to generate the basic grid
+// main mixin to generate the basic grid
 @mixin grid-core($gridColumnWidth, $gridGutterWidth)
   +grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
   +grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
 
-
-// generates .spanN
+// mixin that generates .spanN
 @mixin grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
   @while $gridColumns > 0
     .span#{$gridColumns}
       +grid-core-span($gridColumns)
     $gridColumns: $gridColumns - 1
 
-// generates .offsetN
+// mixin that generates .offsetN
 @mixin grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth)
   @while $gridColumns > 0
     .offset#{$gridColumns}
       +grid-core-offset($gridColumns)
     $gridColumns: $gridColumns - 1
 
-// the css that every span column should get
-@mixin grid-col()
+// The css that every column span should get except width.
+@mixin grid-span()
   float: left
   min-height: 1px  // prevent collapsing columns
   // have to use padding because margin is outside the box-size calculation
   padding-left: $gridGutterWidth / 2
   padding-right: $gridGutterWidth / 2
 
-// the css that every spanN column should get
+// The css that every column spanN should get, just the width
 @mixin grid-core-span($columns)
   width: ($gridColumnWidth * $columns)
 
-// the css that every offsetN should get
+// The css that every column offsetN should get.
 @mixin grid-core-offset($columns)
   margin-left: ($gridColumnWidth * $columns)
 
-// All grid columns need to be children of a `row` classed element, preferrably a div
+// All grid columns need to be children of a `.row` block element
 .row
   +clearfix  // For convenience
   margin-left: auto
@@ -69,10 +71,11 @@ $gridColumnWidth: 100% / $gridColumns
     margin-right: -$gridGutterWidth / 2
     width: auto
 
-// This could be in `grid-span`, but this is more efficient.
+// Collect the common spanN css in a combination selector.
+//   This could be in `grid-core-span`, but this is more efficient.
 .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9,
 .span10, .span11, .span12, .span13, .span14, .span15, .span16
-  +grid-col
+  +grid-span
 
 // Generate base grid
 +grid-core($gridColumnWidth, $gridGutterWidth)
@@ -80,18 +83,19 @@ $gridColumnWidth: 100% / $gridColumns
 
 // ## Semantic Grid
 .main
-  +grid-col
+  +grid-span
   +grid-core-span(8)
 
 .rail
-  +grid-col
+  +grid-span
   +grid-core-span(4)
 
 
 // ## Lines
 // If you need separators between grid elements.
 // `box-sizing: { border-box; }` takes care of the change of width.
-// These can be applied to the rows or the spans.
+// These can be applied to the rows or the column spans.
+// TODO: I really want to rename these. Guide? Rule?
 .border-bottom
   border-bottom: 1px solid $gridLineColor
 
