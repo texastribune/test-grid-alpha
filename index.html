@@ -8,7 +8,7 @@
   </head>
   <body>
     <section>
-      <div class="row"><div id="readme" class="span12">
+      <div class="row"><div id="readme" class="cell span12">
 # The Grid
 
 ## About
@@ -51,10 +51,10 @@ semantic and explicit grids.
 
     <section class="test">
       <div class="row">
-        <div class="span12">
+        <div class="cell span12">
           <div style="background: mediumturquoise;">
 
-            <p>A span12 row, my contents should be the same as the
+            <p>A cell span12 row, my contents should be the same as the
 mediumturquoise block above. There's a little bit of gray to each side. That is
 not ideal, but makes the CSS a lot simpler. I would really like to get rid of
 it. Our minimum supported browser version, IE8, does not support :last-child so
@@ -70,14 +70,14 @@ the ability to draw lines, we need symmetic gutters.</p>
     </section>
 
     <section class="test">
-      <div class="row"><div class="span12">
-        <div class="row"><div class="span12">
-          <div class="row"><div class="span12">
-            <div class="row"><div class="span12">
-              <div class="row"><div class="span12">
+      <div class="row"><div class="cell span12">
+        <div class="row"><div class="cell span12">
+          <div class="row"><div class="cell span12">
+            <div class="row"><div class="cell span12">
+              <div class="row"><div class="cell span12">
                 <div style="background: mediumturquoise;">
 
-                  <p>A deeply-nested span12 row, my contents should also be the
+                  <p>A deeply-nested cell span12 row, my contents should also be the
 same as the mediumturquoise blocks above. This is a test to make sure the gutter
 spacing is correctly handled with every level of nesting.</p>
 
@@ -97,44 +97,44 @@ spacing is correctly handled with every level of nesting.</p>
 
     <section class="test show-cells">
       <div class="row">
-        <div class="span12"><p>span12</p></div>
+        <div class="cell span12"><p>.cell.span12</p></div>
       </div>
       <div class="row">
-        <div class="span4"><p>span4</p></div>
-        <div class="span8"><p>span8</p></div>
+        <div class="cell span4"><p>.cell.span4</p></div>
+        <div class="cell span8"><p>.cell.span8</p></div>
       </div>
       <!-- OFFSET -->
       <div class="row">
-        <div class="span8">
-          <p>span8 container with a nested row</p>
+        <div class="cell span8">
+          <p>.cell.span8 container with a nested row</p>
           <div class="row">
-            <div class="span3">
-              <p>span8 span3</p>
+            <div class="cell span3">
+              <p>.cell.span8 .cell.span3</p>
             </div>
-            <div class="span9">
-              <p>span8 span9</p>
+            <div class="cell span9">
+              <p>.cell.span8 .cell.span9</p>
             </div>
           </div>
         </div>
-        <div class="span4">
-          <p>span4</p>
+        <div class="cell span4">
+          <p>.cell.span4</p>
         </div>
       </div>
       <!-- OFFSET -->
       <div class="row">
-        <div class="span4">
-          <p>span4</p>
+        <div class="cell span4">
+          <p>.cell.span4</p>
         </div>
-        <div class="span4 offset2">
-          <p>span4 offset2</p>
+        <div class="cell span4 offset2">
+          <p>.cell.span4.offset2</p>
         </div>
       </div>
       <div class="row">
-        <div class="span4">
-          <p>span4</p>
+        <div class="cell span4">
+          <p>.cell.span4</p>
         </div>
-        <div class="span4 offset4">
-          <p>span4 offset4</p>
+        <div class="cell span4 offset4">
+          <p>.cell.span4.offset4</p>
         </div>
       </div>
     </section>
@@ -159,34 +159,34 @@ spacing is correctly handled with every level of nesting.</p>
       </div>
     </section>
 
-    <section class="test show-cells">
+    <section class="test">
       Line Test
-      <div class="row border-bottom">
-        <div class="span8">
-          <div class="row border-bottom">
-            <div class="span12">
+      <div class="row border-bottom no-left-gutter">
+        <div class="cell span8">
+          <div class="row">
+            <div class="cell span12 border-bottom">
               <p>Main Heading</p>
             </div>
           </div>
           <div class="row">
-            <div class="span4 border-right _tall">
+            <div class="cell span4 border-right _tall">
               <p>Hi I Am a skyscraper rail</p>
             </div>
-            <div class="span8 _demo">
+            <div class="cell span8 _demo">
               <p>Hi I Am Main Content</p>
             </div>
           </div>
         </div>
-        <div class="span4 border-left _tall _demo">
+        <div class="cell span4 border-left _tall _demo">
           <p>I am a rail. The line to the left won't reach all the way to
             the bottom without some javascript help.</p>
         </div>
       </div>
       <div class="row">
-        <div class="span6 border-right">
+        <div class="cell span6 border-right">
           <p>Hey, More Content</p>
         </div>
-        <div class="span6">
+        <div class="cell span6">
           <p>Hey, More Content</p>
         </div>
       </div>
@@ -195,31 +195,31 @@ spacing is correctly handled with every level of nesting.</p>
     <section class="tes">
       Line Test
       <div class="row border-bottom">
-        <div class="span8">
+        <div class="cell span8">
           <div class="row border-bottom">
-            <div class="span12">
+            <div class="cell span12">
               <p>Main Heading</p>
             </div>
           </div>
           <div class="row">
-            <div class="span4 border-right _tall">
+            <div class="cell span4 border-right _tall">
               <p>Hi I Am a skyscraper rail</p>
             </div>
-            <div class="span8 _demo">
+            <div class="cell span8 _demo">
               <p>Hi I Am Main Content</p>
             </div>
           </div>
         </div>
-        <div class="span4 border-left _tall _demo">
+        <div class="cell span4 border-left _tall _demo">
           <p>I am a rail. The line to the left won't reach all the way to
             the bottom without some javascript help.</p>
         </div>
       </div>
       <div class="row">
-        <div class="span6 border-right">
+        <div class="cell span6 border-right">
           <p>Hey, More Content</p>
         </div>
-        <div class="span6">
+        <div class="cell span6">
           <p>Hey, More Content</p>
         </div>
       </div>
