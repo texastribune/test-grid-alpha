@@ -139,6 +139,9 @@ table { border-collapse: collapse; border-spacing: 0; }
 .row { overflow: hidden; margin-left: auto; margin-right: auto; width: 975px; }
 .row .row { margin-left: -7.5px; margin-right: -7.5px; width: auto; }
 
+.outer-row { width: 960px; margin-left: auto; margin-right: auto; overflow: hidden; }
+.outer-row > .row { margin-left: -7.5px; margin-right: -7.5px; }
+
 .cell { float: left; min-height: 1px; padding-left: 7.5px; padding-right: 7.5px; }
 
 .span12 { width: 100%; }

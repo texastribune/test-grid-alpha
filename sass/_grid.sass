@@ -98,6 +98,15 @@ $gridColumnWidth: 100% / $gridColumns
     margin-right: -$gridGutterWidth / 2
     width: auto
 
+.outer-row
+  width: 960px
+  margin-left: auto
+  margin-right: auto
+  overflow: hidden
+  > .row
+    margin-left: -7.5px
+    margin-right: -7.5px
+
 // The spanN class only gives width, you need .cell to get the other bits.
 .cell
   +grid-span-base
