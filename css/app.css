@@ -212,6 +212,8 @@ section { margin: 1em auto; }
 .test .row { background: #eeeeee; }
 .test .row > * { background: #dddddd; text-align: center; }
 
+.show-cells .row > * p { border: 1px dashed #777777; }
+
 p { -webkit-transition: background-color 0.2s ease; -webkit-transition-delay: 0.3s; -moz-transition: background-color 0.2s ease 0.3s; -o-transition: background-color 0.2s ease 0.3s; transition: background-color 0.2s ease 0.3s; margin: 0; padding: 0.5em; }
 p:hover { -webkit-transition-delay: 0.01s; -moz-transition-delay: 0.01s; -o-transition-delay: 0.01s; transition-delay: 0.01s; background-color: #eeffee; }
 .grid-item p { border: 1px solid #cccccc; text-align: center; }
